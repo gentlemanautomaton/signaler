@@ -35,11 +35,15 @@ func (s *Signaler) Trigger() {
 }
 
 // Deadline will trigger the signal when the current time reaches deadline.
+//
+// The receiver s will be returned for convenient function chaining.
 func (s *Signaler) Deadline(deadline time.Time) *Signaler {
 	return s.Timeout(time.Until(deadline))
 }
 
 // Timeout will trigger the signal after timeout elapses.
+//
+// The receiver s will be returned for convenient function chaining.
 func (s *Signaler) Timeout(timeout time.Duration) *Signaler {
 	t := time.NewTimer(timeout)
 

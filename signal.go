@@ -4,7 +4,7 @@ import "context"
 
 // Signal is a channel that will be closed when signaled.
 //
-// Pass signals by value. Copy signals by value.
+// Pass signals by value.
 //
 // Signals do not consume resources and may be discarded.
 type Signal <-chan struct{}
